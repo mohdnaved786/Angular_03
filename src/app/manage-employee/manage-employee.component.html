@@ -1,0 +1,187 @@
+<section class="manage-employee-section">
+    <div class="container">
+        <div class="manage-employee">
+            <div class="manage-name">
+                <h2>Manage Employees</h2>
+            </div>
+            <div class="manage-buttons">
+                <div class="manage-btn-one">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Delete</button>
+                </div>
+                <div class="manage-btn-two">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#exampleModa2">Add New Employee</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><input type="checkbox" name="" id=""></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><input type="checkbox" name="" id=""></th>
+                        <td>Thomas Hardy</td>
+                        <td>thomashardy@gmail.com</td>
+                        <td>89 chiaroscuro Rd, Portland, USA</td>
+                        <td>(171)555-2222</td>
+                        <td>
+                            <div class="delete-icon"><i class="bi bi-pen-fill text-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModa2"></i><i class="bi bi-trash-fill text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" name="" id=""></th>
+                        <td>Thomas Hardy</td>
+                        <td>thomashardy@gmail.com</td>
+                        <td>89 chiaroscuro Rd, Portland, USA</td>
+                        <td>(171)555-2222</td>
+                        <td>
+                            <div class="delete-icon"><i class="bi bi-pen-fill text-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModa2"></i><i class="bi bi-trash-fill text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" name="" id=""></th>
+                        <td>Thomas Hardy</td>
+                        <td>thomashardy@gmail.com</td>
+                        <td>89 chiaroscuro Rd, Portland, USA</td>
+                        <td>(171)555-2222</td>
+                        <td>
+                            <div class="delete-icon"><i class="bi bi-pen-fill text-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModa2"></i><i class="bi bi-trash-fill text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" name="" id=""></th>
+                        <td>Thomas Hardy</td>
+                        <td>thomashardy@gmail.com</td>
+                        <td>89 chiaroscuro Rd, Portland, USA</td>
+                        <td>(171)555-2222</td>
+                        <td>
+                            <div class="delete-icon"><i class="bi bi-pen-fill text-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModa2"></i><i class="bi bi-trash-fill text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" name="" id=""></th>
+                        <td>Thomas Hardy</td>
+                        <td>thomashardy@gmail.com</td>
+                        <td>89 chiaroscuro Rd, Portland, USA</td>
+                        <td>(171)555-2222</td>
+                        <td>
+                            <div class="delete-icon"><i class="bi bi-pen-fill text-warning" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModa2"></i><i class="bi bi-trash-fill text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"></i></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Modal one -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete these Records?</p>
+                <p class="text-warning">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal two-->
+<div class="modal fade" id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabe2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabe2">Add Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="manageReactiveForm" (ngSubmit)="manageForm()">
+                    <div class="first-input my-2">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="name"
+                            [class.is-invalid]="!manageReactiveForm.controls['name'].valid && manageReactiveForm.controls['name'].touched"
+                            [class.is-valid]="manageReactiveForm.controls['name'].valid" required>
+                        <div *ngIf="manageReactiveForm.controls['name'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!manageReactiveForm.controls['name'].valid && manageReactiveForm.controls['name'].touched"
+                            class="invalid-feedback">
+                            This field is required!
+                        </div>
+                    </div>
+                    <div class="first-input my-2">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="text" class="form-control" formControlName="email"
+                            [class.is-invalid]="!manageReactiveForm.controls['email'].valid && manageReactiveForm.controls['email'].touched"
+                            [class.is-valid]="manageReactiveForm.controls['email'].valid" required>
+                        <div *ngIf="manageReactiveForm.controls['email'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!manageReactiveForm.controls['email'].valid && manageReactiveForm.controls['email'].touched"
+                            class="invalid-feedback">
+                            This field is required!
+                        </div>
+                    </div>
+                    <div class="first-input my-2">
+                        <label for="exampleFormControlInput1" class="form-label">Address</label>
+                        <input type="text" class="form-control" formControlName="address"
+                            [class.is-invalid]="!manageReactiveForm.controls['address'].valid && manageReactiveForm.controls['address'].touched"
+                            [class.is-valid]="manageReactiveForm.controls['address'].valid" required>
+                        <div *ngIf="manageReactiveForm.controls['address'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!manageReactiveForm.controls['address'].valid && manageReactiveForm.controls['address'].touched"
+                            class="invalid-feedback">
+                            This field is required!
+                        </div>
+                    </div>
+                    <div class="first-input my-2">
+                        <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                        <input type="text" class="form-control" formControlName="phone"
+                            [class.is-invalid]="!manageReactiveForm.controls['phone'].valid && manageReactiveForm.controls['phone'].touched"
+                            [class.is-valid]="manageReactiveForm.controls['phone'].valid" required>
+                        <div *ngIf="manageReactiveForm.controls['phone'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!manageReactiveForm.controls['phone'].valid && manageReactiveForm.controls['phone'].touched"
+                            class="invalid-feedback">
+                            This field is required!
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-success px-5" [disabled]="manageReactiveForm.invalid">Add</button>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,83 @@
+<section class="sign-up-section pt-2">
+    <div class="container">
+        <div class="user-sign-up">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-12">
+                    <!-- <div class="aura-div">
+                        <i class="bi bi-apple"></i>
+                        <span>Aura</span>
+                    </div> -->
+                    <div class="user-details">
+                        <h2 class="text-center">Create an account</h2>
+                        <p class="text-center">Sign up now and unlock exclusive access!</p>
+                        <div class="form-div mt-5">
+                            <form class="row g-3 needs-validation" [formGroup]="signupReactiveForm"
+                                (ngSubmit)="signupForm()">
+                                <div class="first-input my-2">
+                                    <label for="exampleFormControlInput1" class="form-label">Your name</label>
+                                    <input type="text" class="form-control" formControlName="firstName"
+                                        placeholder="First Last"
+                                        [class.is-invalid]="!signupReactiveForm.controls['firstName'].valid && signupReactiveForm.controls['firstName'].touched"
+                                        [class.is-valid]="signupReactiveForm.controls['firstName'].valid" required>
+                                    <!-- <div *ngIf="signupReactiveForm.controls['firstName'].valid" class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div *ngIf="!signupReactiveForm.controls['firstName'].valid && signupReactiveForm.controls['firstName'].touched"
+                                        class="invalid-feedback">
+                                        This field is required!
+                                    </div> -->
+                                </div>
+                                <div class="second-input my-2">
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" formControlName="email"
+                                        placeholder="you@email.com"
+                                        [class.is-invalid]="!signupReactiveForm.controls['email'].valid && signupReactiveForm.controls['email'].touched"
+                                        [class.is-valid]="signupReactiveForm.controls['email'].valid" required>
+                                    <!-- <div *ngIf="signupReactiveForm.controls['email'].valid" class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div *ngIf="!signupReactiveForm.controls['email'].valid && signupReactiveForm.controls['email'].touched"
+                                        class="invalid-feedback">
+                                        This field is required!
+                                    </div> -->
+                                </div>
+                                <div class="third-inpu my-2">
+                                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" formControlName="password"
+                                        placeholder="********"
+                                        [class.is-invalid]="!signupReactiveForm.controls['password'].valid && signupReactiveForm.controls['password'].touched"
+                                        [class.is-valid]="signupReactiveForm.controls['password'].valid" required>
+                                    <!-- <div *ngIf="signupReactiveForm.controls['password'].valid" class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div *ngIf="!signupReactiveForm.controls['password'].valid && signupReactiveForm.controls['password'].touched"
+                                        class="invalid-feedback">
+                                        This field is required!
+                                    </div> -->
+                                </div>
+                                <div class="buttons">
+                                    <div class="btn-first">
+                                        <button class="btn" type="submit" [disabled]="signupReactiveForm.invalid">Create Account</button>
+                                    </div>
+                                    <div class="btn-second mt-3">
+                                        <button class="btn"><a routerLink="/login">Sign in</a></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- <div class="help-aura">
+                        <i class="bi bi-envelope fw-bold"></i>
+                        <span>Help@Aura.com</span>
+                    </div> -->
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <div class="user-image">
+                        <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_640.jpg"
+                            alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

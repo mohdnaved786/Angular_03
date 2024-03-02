@@ -1,0 +1,77 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.login-section{
+    /* background-color: #c1c1c1a3; */
+    background-image: url('https://d33wubrfki0l68.cloudfront.net/8d79b89491cf9ef958be1386776dc937d39266be/1a630/img/particle_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.login-section img{
+    width: 100px;
+    position: absolute;
+    top: 20rem;
+    left: 7rem;
+    animation: naved 1s infinite  alternate;
+}
+
+@keyframes naved {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-90px); }
+}
+
+.login-div{
+    background-color: white;
+    margin: 0 25rem;
+    padding: 40px 43px;
+    border-radius: 12px;
+}
+
+.playcart{
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.playcart i{
+    color: #00aaff;
+}
+
+.sign-in h5{
+    font-weight: 600;
+}
+
+.sign-in p{
+    font-size: 14px;
+}
+
+form input:focus{
+    box-shadow: none;
+}
+
+form label{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.login-button button{
+    background-color: #00aaff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 166px;
+    color: white;
+}
+
+.forgot p a{
+    text-decoration: none;
+}
+
+.account p a{
+    text-decoration: none;
+}

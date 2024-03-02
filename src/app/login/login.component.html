@@ -1,0 +1,53 @@
+<section class="login-section">
+    <img src="https://cdn-icons-png.flaticon.com/512/1053/1053364.png" alt="" class="img-fluid">
+    <div class="container">
+        <div class="login-div">
+            <div class="playcart">
+                <i class="bi bi-google-play"></i>
+                <span>playcart</span>
+            </div>
+            <div class="sign-in">
+                <h5>Sign In</h5>
+                <p>Please sign in to your account.</p>
+                <form [formGroup]="loginReactiveForm" (ngSubmit)="loginForm()">
+                    <div class="login-one my-4">
+                        <label for="exampleFormControlInput1" class="form-label">E-mail address</label>
+                        <input type="email" class="form-control" formControlName="email"
+                            placeholder="laura@fintory.com"
+                            [class.is-invalid]="!loginReactiveForm.controls['email'].valid && loginReactiveForm.controls['email'].touched"
+                            [class.is-valid]="loginReactiveForm.controls['email'].valid" required>
+                        <!-- <div *ngIf="loginReactiveForm.controls['email'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!loginReactiveForm.controls['email'].valid && loginReactiveForm.controls['email'].touched"
+                            class="invalid-feedback">
+                            Please provide a valid email.
+                        </div> -->
+                    </div>
+                    <div class="login-two my-4">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="password" class="form-control" formControlName="password" placeholder="********"
+                            [class.is-invalid]="!loginReactiveForm.controls['password'].valid && loginReactiveForm.controls['password'].touched"
+                            [class.is-valid]="loginReactiveForm.controls['password'].valid" required>
+                        <!-- <div *ngIf="loginReactiveForm.controls['password'].valid" class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div *ngIf="!loginReactiveForm.controls['password'].valid && loginReactiveForm.controls['password'].touched"
+                            class="invalid-feedback">
+                            Please provide a valid password.
+                        </div> -->
+                    </div>
+                    <div class="login-button">
+                        <button class="btn" type="submit" [disabled]="loginReactiveForm.invalid">Sign In</button>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="forgot mt-5">
+                <p><a href="#">Forgot your password?</a></p>
+            </div> -->
+            <div class="account">
+                <p><a routerLink="/sign-up">Need an account?</a></p>
+            </div>
+        </div>
+    </div>
+</section>

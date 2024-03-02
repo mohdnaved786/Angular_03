@@ -1,0 +1,95 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.sign-up-section{
+    /* background-color: #c1c1c1a3; */
+    background-image: url('https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/6230afcacc6d23dd93ffea12_620fb365f19d03f99ad5c54a_icon-hosting.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.user-sign-up{
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0 14em;
+}
+
+.aura-div{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+}
+
+.aura-div i{
+    color: #5039ff;
+}
+
+.user-details{
+    padding: 40px 50px;
+}
+
+.user-details h2{
+    font-weight: 600;
+}
+
+.user-details p{
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.form-div label{
+    font-weight: 600;
+}
+
+.form-div input:focus{
+    box-shadow: none;
+
+}
+
+.buttons .btn-first button{
+    background: #b460ff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 25px;
+}
+
+.buttons .btn-second button{
+    background: #8b94dbb0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 26px;
+}
+
+.help-aura{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.btn-second button a{
+    text-decoration: none;
+    color: white;
+}
+
+.user-image{
+    margin-top: 8em;
+}
+
+/* .user-image img{
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
+} */
+
+/* @keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+  
+    100% {
+      transform: translateY(-20px);
+    }
+  } */

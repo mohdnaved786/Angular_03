@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <div class="manage-employee">
+        <div class="manage-name">
+            <h2>Manage Employees</h2>
+        </div>
+        <div class="manage-buttons">
+            <div class="manage-btn-one">
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+            <div class="manage-btn-two">
+                <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Employee</button>
+            </div>
+        </div>
+    </div>
+    <!-- After Hit Submit Form -->
+    <table class="table" *ngIf="myData.length > 0">
+        <thead>
+            <caption>Students</caption>
+            <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of myData; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row g-3 needs-validation" [formGroup]="studentReactiveForm" (ngSubmit)="submitStudentForm()">
+                <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name"
+                        [class.is-invalid]="!studentReactiveForm.controls['name'].valid && studentReactiveForm.controls['name'].touched"
+                        [class.is-valid]="studentReactiveForm.controls['name'].valid" required>
+                    <div *ngIf="studentReactiveForm.controls['name'].valid" class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div *ngIf="!studentReactiveForm.controls['name'].valid && studentReactiveForm.controls['name'].touched"
+                        class="invalid-feedback">
+                        This field is required!
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom02" class="form-label">Email</label>
+                    <input type="text" class="form-control" formControlName="email"
+                        [class.is-invalid]="!studentReactiveForm.controls['email'].valid && studentReactiveForm.controls['email'].touched"
+                        [class.is-valid]="studentReactiveForm.controls['email'].valid" required>
+                    <div *ngIf="studentReactiveForm.controls['email'].valid" class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div *ngIf="!studentReactiveForm.controls['email'].valid && studentReactiveForm.controls['email'].touched"
+                        class="invalid-feedback">
+                        This field is required!
+                    </div>
+        
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom02" class="form-label">Address</label>
+                    <input type="text" class="form-control" formControlName="address"
+                        [class.is-invalid]="!studentReactiveForm.controls['address'].valid && studentReactiveForm.controls['address'].touched"
+                        [class.is-valid]="studentReactiveForm.controls['address'].valid" required>
+                    <div *ngIf="studentReactiveForm.controls['address'].valid" class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div *ngIf="!studentReactiveForm.controls['address'].valid && studentReactiveForm.controls['address'].touched"
+                        class="invalid-feedback">
+                        This field is required!
+                    </div>
+        
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom02" class="form-label">Phone</label>
+                    <input type="text" class="form-control" formControlName="phone"
+                        [class.is-invalid]="!studentReactiveForm.controls['phone'].valid && studentReactiveForm.controls['phone'].touched"
+                        [class.is-valid]="studentReactiveForm.controls['phone'].valid" required>
+                    <div *ngIf="studentReactiveForm.controls['phone'].valid" class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div *ngIf="!studentReactiveForm.controls['phone'].valid && studentReactiveForm.controls['phone'].touched"
+                        class="invalid-feedback">
+                        This field is required!
+                    </div>
+        
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-success" type="submit" [disabled]="studentReactiveForm.invalid">Add User</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

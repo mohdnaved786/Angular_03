@@ -1,0 +1,33 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.manage-employee{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #86b7fe;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 1em;
+}
+
+.manage-buttons{
+    display: flex;
+    gap: 2em;
+}
+
+.delete-icon{
+    display: flex;
+    gap: 10px;
+}
+
+.table-div{
+    line-height: 3.2;
+}
+
+.delete-icon i{
+    cursor: pointer;
+}
+
+.first-input input:focus{
+    box-shadow: none;
+}
